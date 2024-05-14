@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+    {% block main %}
+    <table class="table table-dark bg-dark table-hover">
+        <thead>
+          <tr>
+
+            <th>Stock name</th>
+            <th>Stock price</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for stock in stocks %}
+          <tr>
+            <td>{{ stock.symbol }}</td>
+            <td>{{ stock.price | usd }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% endblock %}

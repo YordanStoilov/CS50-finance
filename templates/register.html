@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+    {% block main %}
+        <div class="container-fluid" style="padding-bottom: 15vh"><h1>Register</h1></div>
+        <div class="container-fluid">
+            <form method="post" action="/register">
+                <input type="text" name="username" placeholder="Username">
+                <input type="password" name="password" placeholder="Password">
+                <input type="password" name="confirmation" placeholder="Confirm Password">
+                <button type="submit">Register</button>
+            </form>
+        </div>
+    {% endblock %}

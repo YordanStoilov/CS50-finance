@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+    {% block main %}
+        {% if stocks_data %}
+        <h1 style="padding-bottom: 15vh">Hello {{ username }}, here is your portfolio:</h1>
+        <table class="table table-dark bg-dark table-hover table-bordered">
+            <thead>
+                <th>
+                    Stock
+                </th>
+                <th>
+                    Quantity
+                </th>
+                <th>
+                    Current Stock Price
+                </th>
+                <th>
+                    Total Value
+                </th>
+            </thead>
+            <tbody>
+                {% for stock in stocks_data %}
+                <tr>
+                  <td>{{ stock.stock_name }}</td>
+                  <td>{{ stock.quantity }}</td>
+                  <td>{{ stock.stock_price }}</td>
+                  <td>{{ stock.total_value }}</td>
+                </tr>
+                {% endfor %}
+              </tbody>
+        </table>
+        {% else %}
+        <h1>Your portfolio is currently empty.</h1>
+        {% endif %}
+        <div style="padding-top: 15vh">
+            <h3>Your cash balance is: {{ cash_balance }}</h3>
+            <h3>Your portfolio equates to: {{ portfolio_total }}</h3>
+        </div>
+
+    {% endblock %}

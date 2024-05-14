@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block main %}
+    {% if results %}
+    <h1 style="padding-bottom: 15vh">{{ username }}, here is your transaction history:</h1>
+        <table class="table table-dark bg-dark table-hover table-bordered">
+            <tr>
+            {% for value in head_values %}
+                <th>
+                    {{ value }}
+                </th>
+            {% endfor %}
+            </tr>
+            {% for transaction in results %}
+            <tr>
+                <td>{{ transaction.datetime }}</td>
+                <td>{{ transaction.type }}</td>
+                <td>{{ transaction.stock_name }}</td>
+                <td>{{ transaction.quantity }}</td>
+                <td>{{ transaction.price }}</td>
+                <td>{{ transaction.trend | safe}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <h1>You have not made any transactions yet.</h1>
+    {% endif %}
+
+{% endblock %}

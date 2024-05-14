@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+    {% block main %}
+
+    <div class="container-fluid" style="padding-bottom: 15vh"><h1>Select stock to buy:</h1></div>
+    <div class="container-fluid">
+        <form method="post" action="/buy">
+            <input type="text" name="symbol" placeholder="Stock Symbol">
+            <input type="text" name="shares" placeholder="Quantity">
+            <button type="submit">Search</button>
+        </form>
+    </div>
+
+    {% endblock %}

@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block main %}
+<div class="container-fluid" style="padding-bottom: 15vh"><h1>Select stock to sell:</h1></div>
+    <form method="POST" action="/sell">
+        <select name="symbol">
+            {% for option in options %}
+            <option value="{{ option.stock_name }}">{{ option.stock_name }}</option>
+            {% endfor %}
+        </select>
+        <input type="number", placeholder="Quantity", name="shares", min="1">
+        <button type="submit">Submit</button>
+    </form>
+{% endblock %}

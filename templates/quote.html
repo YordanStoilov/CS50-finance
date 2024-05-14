@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+
+    {% block main %}
+    <div class="container-fluid" style="padding-bottom: 15vh"><h1>Search for stock:</h1></div>
+        <div class="container-fluid">
+            <form method="post" action="/quote">
+                <input type="text" name="symbol" placeholder="Stock Symbol">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+    {% endblock %}
